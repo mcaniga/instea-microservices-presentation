@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  eureka-server:
+    image: springcloud/eureka
+    ports:
+      - "8761:8761"
+
+  service-a:
+    build: ./ServiceA
+    ports:
+      - "8080:8080"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+
+  service-b:
+    build: ./ServiceB
+    ports:
+      - "8081:8081"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+
+  config-server:
+    build: ./ConfigServer
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_CLOUD_CONFIG_SERVER_GIT_URI=https://github.com/yourusername/your-config-repo.git
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+
+  vault:
+    image: vault:latest
+    ports:
+      - "8200:8200"
+    cap_add:
+      # Allows Vault to lock memory, preventing sensitive data from being swapped to disk.
+      - IPC_LOCK
+    environment:
+      # Development token. This is for development purposes and should be secured appropriately for production.
+      VAULT_DEV_ROOT_TOKEN_ID: s.VaultExampleTokenHere
+      # Address on which the vault listens
+      VAULT_DEV_LISTEN_ADDRESS: 0.0.0.0:8200
+    # Start Vault in development mode
+    # Not suitable for production - it stores all data in-memory and starts unsealed with a single key
+    command: ["vault", "server", "-dev"]
