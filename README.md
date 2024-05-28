@@ -2,11 +2,15 @@
 Demo for Microservice architecture Instea Tech Talk. Contains a demonstration of microservices architecture using Spring Cloud.
 
 ## How to run
-- with docker compose:
+A) Run microservices manually and deps (Eureka, Vault) with Docker
+:
 ```
-docker-compose up --build
+docker-compose -f docker-compose-deps.yml up
 ```
-
+B) Run all microservies and deps in Docker
+```
+docker-compose -f docker-compose-all.yml up
+```
 
 ## Architecture
 ### Service A - API Gateway
