@@ -19,6 +19,14 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 public class AmicroserviceApplication {
 
+  /**
+   * Main method which serves as the entry point for the Spring Boot application.
+   * This method boots up the API Gateway application using Spring Boot's {@link SpringApplication#run(Class, String...)}
+   * method, which starts the Spring application context and auto-configures the Spring application based on the
+   * classpath settings, other beans, and various property settings.
+   *
+   * @param args Command line arguments passed to the application.
+   */
   public static void main(String[] args) {
     SpringApplication.run(AmicroserviceApplication.class, args);
   }

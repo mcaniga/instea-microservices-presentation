@@ -1,7 +1,5 @@
 package com.instea.presentation.microservices.amicroservice.controller;
 
-import com.instea.presentation.microservices.amicroservice.client.BMicroserviceClient;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,9 +9,12 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 
+import com.instea.presentation.microservices.amicroservice.client.BMicroserviceClient;
+
 /**
- * Gateway Controller acting as the entry point for all API calls directed to backend services.
- * This controller routes API requests to the appropriate backend service, handling data fetching operations.
+ * Controller for exposing service B
+ * Spring API Gateway provides its own mechanism for exposing routes (from application.properties)
+ * This controller is present only to demonstrate Feign client ( too lazy to create new microservice :)) ).
  */
 @RestController
 @RequestMapping("/api")
@@ -28,7 +29,7 @@ public class GatewayController {
    *
    * @return A string representation of the data retrieved from the backend service.
    */
-  @GetMapping("/data")
+  @GetMapping("/data-feign")
   @Operation(summary = "Fetch Data", description = "Fetch data from backend service B")
   @ApiResponses(value = {
       @ApiResponse(responseCode = "200", description = "Successful retrieval of processed data")

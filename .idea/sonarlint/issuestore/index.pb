@@ -1,3 +1,30 @@
 
 H
 bmicroservice/Dockerfile,0\1\016519f6bd68568f19e302d030c24f26812f36a4
+e
+5amicroservice/src/main/resources/bootstrap.properties,3\3\33f7de58838d2a98c54e632089e5efdce7a46455
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+C
+architecture.drawio,b\4\b418b174042ac72791c3717bf37fb1fd62079b0a
+ù
+mamicroservice/src/main/java/com/instea/presentation/microservices/amicroservice/AmicroserviceApplication.java,9\d\9d60f8ef43c4e6704b7d83cc379e3873655c1486
+[
++config/bmicroservice/application.properties,6\4\6406c5790e6f1bf3980b6abab61bca62f9d35226
+F
+docker-compose-all.yml,a\3\a3415cc7f71865eddb8c89d436a4a6cc12bde9a2
+G
+docker-compose-deps.yml,f\d\fd4da0811d5673745916f1487313fa7fdee37641
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+e
+5bmicroservice/src/main/resources/bootstrap.properties,8\b\8b049b34cae460afa58819eb34ed5285a05ed186
+ê
+`bmicroservice/src/main/java/com/instea/presentation/bmicroservice/controller/DataController.java,d\1\d11d631ef3ea497ffe6fad583d3a4ae884838568
+°
+qamicroservice/src/main/java/com/instea/presentation/microservices/amicroservice/controller/GatewayController.java,c\a\ca91f91fd27ec41d76c3804fb35f35f29052779d
+E
+amicroservice/pom.xml,0\1\019af1e30dfc0606be4328fe7e8b7eca71390ff3
+[
++config/amicroservice/application.properties,8\d\8d9547ea49db74774f327db89ea3e58cfe86838f

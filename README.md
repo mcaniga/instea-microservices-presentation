@@ -2,12 +2,11 @@
 Demo for Microservice architecture Instea Tech Talk. Contains a demonstration of microservices architecture using Spring Cloud.
 
 ## How to run
-A) Run microservices manually and deps (Eureka, Vault) with Docker
-:
+A) Run microservices manually and deps (Eureka, Vault) with Docker:
 ```
 docker-compose -f docker-compose-deps.yml up
 ```
-B) Run all microservies and deps in Docker
+B) Run all microservies and deps in Docker:
 ```
 docker-compose -f docker-compose-all.yml up
 ```
@@ -62,6 +61,21 @@ This architecture is not production ready, it is **basic** for educational purpo
 - microservices often communicate via events
 - (auto)scaling concept should be present
 - configuration should be in external repo (not in repo with code) - should have different authorization
+- auth is not configured
+  - integration with Spring API Gateway is possible (filters): eg. spring-security + TokenValidationFilter + spring.cloud.gateway.routes[x].filters[y]
+- secret management is not present
+  - eg. spring-cloud-starter-vault-config + Hashicorp Vault
+  - useful eg. for database passwords
+- tracing is not configured
+  - eg. Jaeger
+  - jaeger arch:  https://www.jaegertracing.io/docs/1.57/architecture/
+  - uber-trace-id: https://www.jaegertracing.io/docs/1.22/client-libraries/#key
+- log scraping is not configured
+  - eg. ELK stack 
+  - possible flow
+    1. Store logs in logstash format (logstash-logback-encoder + logback.xml)
+    2. Configure logstash to scrape logs from microservices and send them to Elastic
+    3. Visualize logs in Kibana
 
 ## Concepts covered
 - **API Gateway**: Utilizing Spring Cloud Gateway for routing to various services.
@@ -75,4 +89,7 @@ This architecture is not production ready, it is **basic** for educational purpo
 ## Advised route
 This is recomended learning route to browse this demo.
 
-1. xxx
+1. Architecture diagram
+2. Service B (target service, express that "goal" is to invoke /process endpoint - but service(s) is(are) in private subnet)
+3. Service A (gateway to target service)
+4. Service C (contains configuration to target service)

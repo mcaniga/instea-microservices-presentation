@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  *   - logging.level.feign.client=DEBUG
  *   - feign.client.config.default.loggerLevel=full
  */
-@FeignClient(name = "service-b")
+@FeignClient(name = "service-b-data")
 public interface BMicroserviceClient {
 
   /**

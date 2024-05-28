@@ -12,6 +12,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
  * Controller to process data requests.
  */
 @RestController
+@RequestMapping("/api")
+@RequiredArgsConstructor
 @Tag(name = "Data Processing", description = "The Data Processing Controller for Service B")
 public class DataController {
 
