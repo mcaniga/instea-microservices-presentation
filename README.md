@@ -22,6 +22,9 @@ It's implemented using Spring the Cloud Gateway and integrates with Netflix Eure
 - **Security**: Basic HTTP authentication to secure endpoints.
 - **Configuration Management**: Fetch and update configuration properties dynamically from Service C - Config Server.
 
+![image](https://github.com/mcaniga/instea-microservices-presentation/assets/21160629/6bc724b1-8617-469c-a27c-5c66ae46d88d)
+
+
 ### Service B - Backend Service
 Service B is responsible for processing data and providing business logic. It registers with Eureka and can be dynamically discovered by Service A. Similar to Service A, Service B retrieves its configuration from Service C - Config Key Server, ensuring that its behavior is consistent with the latest configurations stored centrally.
 
