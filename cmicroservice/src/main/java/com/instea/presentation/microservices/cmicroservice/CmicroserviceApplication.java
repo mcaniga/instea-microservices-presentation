@@ -17,6 +17,17 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  * official Spring documentation:
  * <a href="https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_spring_cloud_config_server">
  * Spring Cloud Config Server Documentation</a>.
+ *
+ * Common externalized configuration:
+ * - application.properties
+ * - application-{profile}.properties
+ * - logback.xml
+ * - routing rules
+ *
+ * NOTE: automatic refresh is possible (not implemented)
+ * - needs message broker (eg. Kafka) and git webhook
+ * - webhook will hit /refresh endpoint on Spring Config Server on configuration change
+ * - Spring Config Server will send every client a message with the actual configuration
  */
 @SpringBootApplication
 @EnableConfigServer
