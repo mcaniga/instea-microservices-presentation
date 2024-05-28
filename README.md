@@ -52,6 +52,13 @@ Manages sensitive data such as passwords, tokens, and API keys using static and 
 ![](architecture.png)
 (source: **architecture.drawio**)
 
+This architecture is not production ready, it is **basic** for educational purposes, in reality are these differences:
+- more microservices
+- real external systems (eg. real DB)
+- microservices often communicate via events
+- (auto)scaling concept should be present
+- configuration should be in external repo (not in repo with code) - should have different authorization
+
 ## Concepts covered
 - **API Gateway**: Utilizing Spring Cloud Gateway for routing to various services.
 - **Service Discovery**: Integration of Netflix Eureka for dynamic service discovery.
