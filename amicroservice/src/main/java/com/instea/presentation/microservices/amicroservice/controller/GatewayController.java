@@ -13,7 +13,7 @@ import com.instea.presentation.microservices.amicroservice.client.BMicroserviceC
 
 /**
  * Controller for exposing service B
- * Spring API Gateway provides its own mechanism for exposing routes (from application.properties)
+ * Spring API Gateway provides its own mechanism for exposing routes (from amicroservice-default.properties)
  * This controller is present only to demonstrate Feign client ( too lazy to create new microservice :)) ).
  */
 @RestController

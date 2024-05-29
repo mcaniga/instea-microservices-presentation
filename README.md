@@ -1,6 +1,12 @@
 # instea-microservices-presentation
 Demo for Microservice architecture Instea Tech Talk. Contains a demonstration of microservices architecture using Spring Cloud.
 
+## How to run
+1. start Eureka
+2. start Config Server (Eureka does not use CS, order does not matter)
+3. start service B
+4. start service A
+
 ## Architecture
 ### Service A - API Gateway
 Service A functions as an API Gateway, directing incoming requests to the appropriate backend services.

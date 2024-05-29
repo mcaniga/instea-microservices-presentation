@@ -19,7 +19,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  * Spring Cloud Config Server Documentation</a>.
  *
  * Common externalized configuration:
- * - application.properties
+ * - amicroservice-default.properties
  * - application-{profile}.properties
  * - logback.xml
  * - routing rules

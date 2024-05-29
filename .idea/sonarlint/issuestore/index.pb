@@ -14,8 +14,6 @@ mamicroservice/src/main/java/com/instea/presentation/microservices/amicroservice
 +config/bmicroservice/application.properties,6\4\6406c5790e6f1bf3980b6abab61bca62f9d35226
 e
 5bmicroservice/src/main/resources/bootstrap.properties,8\b\8b049b34cae460afa58819eb34ed5285a05ed186
-[
-+config/cmicroservice/application.properties,e\f\ef45d4a7d65b8687126970ab99b7613a72e74836
 ê
 `bmicroservice/src/main/java/com/instea/presentation/bmicroservice/controller/DataController.java,d\1\d11d631ef3ea497ffe6fad583d3a4ae884838568
 °

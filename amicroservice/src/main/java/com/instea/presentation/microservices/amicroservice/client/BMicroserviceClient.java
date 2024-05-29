@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * NOTE2: Feign generates the implementation at runtime - cannot look at source in `target` as with generated clients from openapi
  *
  * Debugging feign clients:
- * - application.properties
+ * - amicroservice-default.properties
  *   - logging.level.feign.client=DEBUG
  *   - feign.client.config.default.loggerLevel=full
  */
