@@ -10,7 +10,5 @@ C
 mamicroservice/src/main/java/com/instea/presentation/microservices/amicroservice/AmicroserviceApplication.java,9\d\9d60f8ef43c4e6704b7d83cc379e3873655c1486
 [
 +config/bmicroservice/application.properties,6\4\6406c5790e6f1bf3980b6abab61bca62f9d35226
-ê
-`bmicroservice/src/main/java/com/instea/presentation/bmicroservice/controller/DataController.java,d\1\d11d631ef3ea497ffe6fad583d3a4ae884838568
 °
 qamicroservice/src/main/java/com/instea/presentation/microservices/amicroservice/controller/GatewayController.java,c\a\ca91f91fd27ec41d76c3804fb35f35f29052779d

@@ -29,6 +29,6 @@ public interface BMicroserviceClient {
    *
    * @return the data as a String that has been processed by Service B.
    */
-  @GetMapping("/process")
+  @GetMapping("/api/process")
   String getData();
 }

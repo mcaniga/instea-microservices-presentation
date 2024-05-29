@@ -21,7 +21,7 @@ import com.instea.presentation.microservices.amicroservice.client.BMicroserviceC
 @RequiredArgsConstructor
 public class GatewayController {
 
-  private BMicroserviceClient backendClient;
+  private final BMicroserviceClient backendClient;
 
   /**
    * Fetches data by making a call through the backend service client.
