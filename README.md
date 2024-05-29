@@ -1,16 +1,6 @@
 # instea-microservices-presentation
 Demo for Microservice architecture Instea Tech Talk. Contains a demonstration of microservices architecture using Spring Cloud.
 
-## How to run
-A) Run microservices manually and deps (Eureka, Vault) with Docker:
-```
-docker-compose -f docker-compose-deps.yml up
-```
-B) Run all microservies and deps in Docker:
-```
-docker-compose -f docker-compose-all.yml up
-```
-
 ## Architecture
 ### Service A - API Gateway
 Service A functions as an API Gateway, directing incoming requests to the appropriate backend services.
@@ -41,18 +31,11 @@ Service C acts as a Spring Cloud Config Server, managing externalized configurat
 - **Version Control Integration**: Integrate with Git to manage configuration versions and history.
 - **Dynamic Update Capability**: Allow services to refresh their configurations without restarting, supporting dynamic changes in the environment.
 
-### Eureka Server
+### Service D - Eureka Server
 A service registry that provides discovery services for microservices. All services register with Eureka and discover each other via this centralized registry, enabling load balancing and failover of inter-service calls.
 
 #### Key Responsibilities:
 - **Service Registration and Discovery**: Allow services to register themselves and discover other services dynamically.
-
-### Vault
-Manages sensitive data such as passwords, tokens, and API keys using static and dynamic secrets management. Services A and B interact with Vault to retrieve secrets required for their operations.
-
-#### Key Responsibilities:
-- **Secrets Management**: Securely store, access, and manage secrets.
-- **Dynamic Secrets**: Provide capabilities for on-the-fly generation of credentials, reducing the risks associated with static credentials.
 
 ### Architecture diagram
 ![](architecture.png)
@@ -83,11 +66,9 @@ This architecture is not production ready, it is **basic** for educational purpo
 ## Concepts covered
 - **API Gateway**: Utilizing Spring Cloud Gateway for routing to various services.
 - **Service Discovery**: Integration of Netflix Eureka for dynamic service discovery.
-- **Authentication and Authorization**: Basic auth to secure endpoints.
 - **Client Resilience**: Implementation of Feign clients with Resilience4j for fault tolerance.
 - **Configuration Management**: Centralized configuration via Spring Cloud Config.
-- **Secret Management**: Secure management of secrets using Spring Cloud Vault.
-- **Observability**: Tracing with Jaeger, metrics with Spring Boot Actuator, and enhanced logging and audit capabilities.
+- **Observability**: Management endpoints with Spring Boot Actuator.
 
 ## Advised route
 This is recomended learning route to browse this demo.
