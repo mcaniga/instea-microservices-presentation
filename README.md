@@ -98,19 +98,19 @@ GET http://localhost:8080/actuator/health
   # Percentage of calls that are considered slow, based on predefined thresholds of call duration. 
   # -1.0% = no calls have been slow
   "slowCallRate": "-1.0%",
-  # xxx
+  # # If the `slowCallRate` exceeds `slowCallRateThreshold`, the circuit breaker will OPEN (prevent calls).
   "slowCallRateThreshold": "100.0%",
-  # xxx
+  # The total number of calls in the current measurement window. 
   "bufferedCalls": 0,
-  # xxx
+  # Number of slow calls (slow call is defined by slowCallDurationThreshold)
   "slowCalls": 0,
-  # xxx
+  # Number of slow calls that failed
   "slowFailedCalls": 0,
-  # xxx
+  # Number of failed calls
   "failedCalls": 0,
-  # xxx
+  # Number of calls that was not permitted by the circuit breaker (due to OPEN or HALF-OPEN state)
   "notPermittedCalls": 0,
-  # xxx
+  # CLOSED/OPEN/HALF-OPEN/DISABLED/FORCE-OPEN
   "state": "CLOSED"
 }
 ```
