@@ -32,7 +32,7 @@ public class DataController {
       @ApiResponse(responseCode = "200", description = "Successful retrieval of processed data")
   })
   public String processData(@RequestHeader("X-FAILURE") String xFailure) {
-    if (xFailure != null) {
+    if (xFailure.equals("failure")) {
       log.warn("Circuit breaker test");
       throw new IllegalArgumentException();
     }
