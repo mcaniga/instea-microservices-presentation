@@ -4,9 +4,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 
 import com.instea.presentation.microservices.amicroservice.client.BMicroserviceClient;
@@ -30,10 +27,6 @@ public class GatewayController {
    * @return A string representation of the data retrieved from the backend service.
    */
   @GetMapping("/data-feign")
-  @Operation(summary = "Fetch Data", description = "Fetch data from backend service B")
-  @ApiResponses(value = {
-      @ApiResponse(responseCode = "200", description = "Successful retrieval of processed data")
-  })
   public String getData() {
     return backendClient.getData();
   }

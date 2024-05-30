@@ -4,6 +4,17 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.function.RouterFunction;
+import org.springframework.web.servlet.function.RouterFunctions;
+import org.springframework.web.servlet.function.ServerRequest;
+import org.springframework.web.servlet.function.ServerResponse;
+
+import static org.springframework.cloud.gateway.server.mvc.handler.GatewayRouterFunctions.route;
+import static org.springframework.cloud.gateway.server.mvc.handler.HandlerFunctions.http;
+import static org.springframework.cloud.gateway.server.mvc.predicate.GatewayRequestPredicates.path;
 
 /***
  * SpringBootApplication - convenience annotation combining 3 annotations
@@ -29,6 +40,21 @@ public class AmicroserviceApplication {
    */
   public static void main(String[] args) {
     SpringApplication.run(AmicroserviceApplication.class, args);
+  }
+
+  @Bean
+  public RouterFunction<ServerResponse> routerFunction() {
+    return RouterFunctions.route()
+        .GET("/api/data", this::handleDataRequest)
+        .build();
+  }
+
+  private ServerResponse handleDataRequest(ServerRequest request) {
+    // Logic to handle the request or forward it
+    // For example, using RestTemplate to forward:
+    RestTemplate restTemplate = new RestTemplate();
+    ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8081/api/process", String.class);
+    return ServerResponse.ok().body(response.getBody());
   }
 
 }
