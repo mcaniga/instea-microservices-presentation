@@ -83,3 +83,34 @@ This is recomended learning route to browse this demo.
 2. Service B (target service, express that "goal" is to invoke /process endpoint - but service(s) is(are) in private subnet)
 3. Service A (gateway to target service)
 4. Service C (contains configuration to target service)
+
+## Circuit breaker example
+GET http://localhost:8080/actuator/health
+
+```
+...
+{
+  # Percentage of calls that failed compared to the total number of calls within a given window
+  # -1.0% = no failure calls have been made
+  "failureRate": "-1.0%",
+  # If the `failureRate` exceeds `failureRateThreshold`, the circuit breaker will OPEN (prevent calls).
+  "failureRateThreshold": "50.0%",
+  # Percentage of calls that are considered slow, based on predefined thresholds of call duration. 
+  # -1.0% = no calls have been slow
+  "slowCallRate": "-1.0%",
+  # xxx
+  "slowCallRateThreshold": "100.0%",
+  # xxx
+  "bufferedCalls": 0,
+  # xxx
+  "slowCalls": 0,
+  # xxx
+  "slowFailedCalls": 0,
+  # xxx
+  "failedCalls": 0,
+  # xxx
+  "notPermittedCalls": 0,
+  # xxx
+  "state": "CLOSED"
+}
+```
