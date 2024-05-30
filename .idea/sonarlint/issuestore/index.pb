@@ -12,3 +12,23 @@ mamicroservice/src/main/java/com/instea/presentation/microservices/amicroservice
 +config/bmicroservice/application.properties,6\4\6406c5790e6f1bf3980b6abab61bca62f9d35226
 °
 qamicroservice/src/main/java/com/instea/presentation/microservices/amicroservice/controller/GatewayController.java,c\a\ca91f91fd27ec41d76c3804fb35f35f29052779d
+E
+amicroservice/pom.xml,0\1\019af1e30dfc0606be4328fe7e8b7eca71390ff3
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+W
+'config/cmicroservice-default.properties,a\f\af5a6592a987ead067482c9172a0b83cf8605821
+e
+5bmicroservice/src/main/resources/bootstrap.properties,8\b\8b049b34cae460afa58819eb34ed5285a05ed186
+E
+bmicroservice/pom.xml,0\e\0efb6ef23ea8769bc2a0b224e927525e99c05f3e
+g
+7cmicroservice/src/main/resources/application.properties,c\2\c20e591e745e38376001b0dab26c75013a623ff3
+ê
+`bmicroservice/src/main/java/com/instea/presentation/bmicroservice/controller/DataController.java,d\1\d11d631ef3ea497ffe6fad583d3a4ae884838568
+W
+'config/bmicroservice-default.properties,2\c\2c6ff93457b0fede068fc277349dcdf4c2f9aec0
+e
+5amicroservice/src/main/resources/bootstrap.properties,3\3\33f7de58838d2a98c54e632089e5efdce7a46455
+W
+'config/amicroservice-default.properties,f\c\fcdf47208a62d987335ba382331cd6aac5f4019d

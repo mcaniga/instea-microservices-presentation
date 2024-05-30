@@ -9,12 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.function.RouterFunction;
 import org.springframework.web.servlet.function.RouterFunctions;
-import org.springframework.web.servlet.function.ServerRequest;
 import org.springframework.web.servlet.function.ServerResponse;
 
-import static org.springframework.cloud.gateway.server.mvc.handler.GatewayRouterFunctions.route;
-import static org.springframework.cloud.gateway.server.mvc.handler.HandlerFunctions.http;
-import static org.springframework.cloud.gateway.server.mvc.predicate.GatewayRequestPredicates.path;
+import lombok.RequiredArgsConstructor;
 
 /***
  * SpringBootApplication - convenience annotation combining 3 annotations
@@ -28,6 +25,7 @@ import static org.springframework.cloud.gateway.server.mvc.predicate.GatewayRequ
 @SpringBootApplication
 @EnableFeignClients
 @EnableDiscoveryClient
+@RequiredArgsConstructor
 public class AmicroserviceApplication {
 
   /**
@@ -42,19 +40,18 @@ public class AmicroserviceApplication {
     SpringApplication.run(AmicroserviceApplication.class, args);
   }
 
-  @Bean
-  public RouterFunction<ServerResponse> routerFunction() {
-    return RouterFunctions.route()
-        .GET("/api/data", this::handleDataRequest)
-        .build();
-  }
 
-  private ServerResponse handleDataRequest(ServerRequest request) {
-    // Logic to handle the request or forward it
-    // For example, using RestTemplate to forward:
-    RestTemplate restTemplate = new RestTemplate();
-    ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8081/api/process", String.class);
-    return ServerResponse.ok().body(response.getBody());
-  }
+  // NOTE: config via code - alternative to property based config
+//  @Bean
+//  public RouterFunction<ServerResponse> routerFunction() {
+//    return RouterFunctions.route()
+//        .GET("/api/data", request -> {
+//          // In prod code, define rest template bean in some @Configuration and inject it here (do not recreate for each invocation)
+//          RestTemplate restTemplate = new RestTemplate();
+//          ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8081/api/process", String.class);
+//          return ServerResponse.ok().body(response.getBody());
+//        })
+//        .build();
+//  }
 
 }
