@@ -1,6 +1,7 @@
 package com.instea.presentation.microservices.amicroservice.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,10 +25,11 @@ public class GatewayController {
    * Fetches data by making a call through the backend service client.
    * This method serves as a public proxy for fetching data from the internal service B.
    *
+   * @param xFailure - if present, then call will end with error (for circuit breaker testing)
    * @return A string representation of the data retrieved from the backend service.
    */
   @GetMapping("/data-feign")
-  public String getData() {
-    return backendClient.getData();
+  public String getData(@RequestHeader("X-FAILURE") String xFailure) {
+    return backendClient.getData(xFailure);
   }
 }

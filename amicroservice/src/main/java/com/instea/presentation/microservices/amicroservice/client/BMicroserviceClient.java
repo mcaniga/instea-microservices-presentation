@@ -2,6 +2,9 @@ package com.instea.presentation.microservices.amicroservice.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
 /**
  * Feign client for interacting with Service B.
@@ -21,14 +24,16 @@ import org.springframework.web.bind.annotation.GetMapping;
  *   - feign.client.config.default.loggerLevel=full
  */
 @FeignClient(name = "bmicroservice")
+@CircuitBreaker(name = "bmicroservice")
 public interface BMicroserviceClient {
 
   /**
    * Retrieve processed data from Service B.
    * This method sends a GET request to the /process endpoint of Service B.
    *
+   * @param xFailure - if present, then call will end with error (for circuit breaker testing)
    * @return the data as a String that has been processed by Service B.
    */
   @GetMapping("/api/process")
-  String getData();
+  String getData(@RequestHeader("X-FAILURE") String xFailure);
 }

@@ -8,8 +8,6 @@ C
 mamicroservice/src/main/java/com/instea/presentation/microservices/amicroservice/AmicroserviceApplication.java,9\d\9d60f8ef43c4e6704b7d83cc379e3873655c1486
 ¡
 qamicroservice/src/main/java/com/instea/presentation/microservices/amicroservice/controller/GatewayController.java,c\a\ca91f91fd27ec41d76c3804fb35f35f29052779d
-E
-amicroservice/pom.xml,0\1\019af1e30dfc0606be4328fe7e8b7eca71390ff3
 e
 5bmicroservice/src/main/resources/bootstrap.properties,8\b\8b049b34cae460afa58819eb34ed5285a05ed186
 E
